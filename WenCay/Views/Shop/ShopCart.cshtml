@@ -1,0 +1,118 @@
+﻿@model WenCay.Models.Entity.SANPHAM
+@{
+    ViewBag.Title = "ShopCart";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+<!-- ##### Breadcrumb Area Start ##### -->
+<div class="breadcrumb-area">
+    <!-- Top Breadcrumb Area -->
+    <div class="top-breadcrumb-area bg-img bg-overlay d-flex align-items-center justify-content-center" style="background-image: url(/Asset/general/img/bg-img/24.jpg);">
+        <h2>GIỎ HÀNG</h2>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/Home/Index"><i class="fa fa-home"></i> Trang chủ</a></li>
+                        <li class="breadcrumb-item active" aria-current="page"><a href="/Shop/Index"><i class="fa fa-home"></i>Quầy hàng</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Giỏ hàng</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ##### Cart Area Start ##### -->
+<div class="cart-area section-padding-0-100 clearfix">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="cart-table clearfix">
+                    <table class="table table-responsive">
+                        <thead>
+                            <tr>
+                                <th>Sản phẩm</th>
+                                <th>Số lượng</th>
+                                <th>Giá</th>
+                                <th>TOÀN BỘ</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="cart_product_img">
+                                    <a href="#"><img src="img/bg-img/34.jpg" alt="Product"></a>
+                                    <h5>Cây nha đam</h5>
+                                </td>
+                                <td class="qty">
+                                    <div class="quantity">
+                                        <span class="qty-minus" onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty ) &amp;&amp; qty &gt; 1 ) effect.value--;return false;"><i class="fa fa-minus" aria-hidden="true"></i></span>
+                                        <input type="number" class="qty-text" id="qty" step="1" min="1" max="99" name="quantity" value="1">
+                                        <span class="qty-plus" onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty )) effect.value++;return false;"><i class="fa fa-plus" aria-hidden="true"></i></span>
+                                    </div>
+                                </td>
+                                <td class="price"><span>200000</span></td>
+                                <td class="total_price"><span>200000</span></td>
+                                <td class="action"><a href="#"><i class="icon_close"></i></a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <!-- Coupon Discount -->
+            <div class="col-12 col-lg-6">
+                <div class="coupon-discount mt-70">
+                    <h5>PHIẾU GIẢM GIÁ</h5>
+                    <p>Phiếu áp dụng cho thẻ chính dùng thanh toán. Mua thêm những vật phẩm cần thiết từ kệ hàng để kích hoạt. Nhấn "Thêm mã giảm giá" và nhập mã code giảm giá vào để được giảm. Tổng tiền đã chi sẽ được cập nhật để biết số tiền đã tiết kiệm được.</p>
+                    <form action="#" method="post">
+                        <input type="text" name="coupon-code" placeholder="Nhập mã giảm Giá">
+                        <button type="submit">ÁP DỤNG GIẢM GIÁ</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Cart Totals -->
+            <div class="col-12 col-lg-6">
+                <div class="cart-totals-area mt-70">
+                    <h5 class="title--">Tổng chi phí</h5>
+                    <div class="subtotal d-flex justify-content-between">
+                        <h5>Chi phí phụ</h5>
+                        <h5>200000</h5>
+                    </div>
+                    <div class="shipping d-flex justify-content-between">
+                        <h5>Giao hàng</h5>
+                        <div class="shipping-address">
+                            <form action="#" method="post">
+                                <select class="custom-select">
+                                    <option selected>Ha Noi</option>
+                                    <option value="1">Da Nang</option>
+                                    <option value="2">Da Lat</option>
+                                    <option value="3">Ho Chi Minh</option>
+                                    <option value="4">Con Dao</option>
+                                </select>
+                                <input type="text" name="shipping-text" id="shipping-text" placeholder="Vùng">
+                                <input type="text" name="shipping-zip" id="shipping-zip" placeholder="Mã ZIP">
+                                <button type="submit">Tổng chi phí mới</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="total d-flex justify-content-between">
+                        <h5>Tổng cộng</h5>
+                        <h5>200000</h5>
+                    </div>
+                    <div class="checkout-btn">
+                        <a href="#" class="btn alazea-btn w-100">TIẾP TỤC MUA</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- ##### Cart Area End ##### -->
